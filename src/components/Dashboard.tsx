@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { RepositoryData } from '../domain';
+import { RepositoryData, DirectoryID } from '../domain';
 import DirectoryTree from './DirectoryTree';
 
 interface DashboardProps {
@@ -7,9 +7,15 @@ interface DashboardProps {
 }
 
 function Dashboard({ repoData } : DashboardProps) : JSX.Element {
+  const [selectedDir, setSelectedDir] = React.useState('root');
+
   return (
     <div>
-      <DirectoryTree directories={repoData.directories} />
+      <DirectoryTree
+        directories={repoData.directories}
+        onDirectoryClick={(id: DirectoryID) => setSelectedDir(id)}
+      />
+      {selectedDir}
     </div>
   );
 }
