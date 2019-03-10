@@ -19,7 +19,7 @@ function read() : RepositoryData {
         id: 'd3',
         name: '⛰ Todos',
         parent: 'root',
-      }
+      },
     ],
     notes: [
       {
