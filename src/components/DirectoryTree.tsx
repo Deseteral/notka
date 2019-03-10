@@ -1,4 +1,5 @@
 import * as React from 'react';
+import styled from 'styled-components';
 import { DirectoryID, Directory } from '../domain';
 
 interface DirectoryTreeProps {
@@ -6,18 +7,26 @@ interface DirectoryTreeProps {
   onDirectoryClick: (id: DirectoryID) => void
 }
 
+const TreeWrapper = styled.div`
+  padding: 16px;
+`;
+
+const List = styled.div<{ top: boolean }>`
+  padding-left: ${props => (props.top ? '0' : '26px')};
+`;
+
+const ListElement = styled.div`
+  cursor: pointer;
+`;
+
 function renderNode(
   currentDir: Directory,
   childDirs: Directory[],
   dirs: Directory[],
   onDirectoryClick: (id: DirectoryID) => void,
 ) {
-  const WrapperNode: (props: any) => JSX.Element = currentDir.id === 'root'
-    ? props => <div {...props} />
-    : props => <li {...props} />;
-
   return (
-    <WrapperNode key={currentDir.id}>
+    <ListElement key={currentDir.id}>
       {currentDir.name && (
         // eslint-disable-next-line max-len
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
@@ -26,19 +35,18 @@ function renderNode(
         </div>
       )}
       {(childDirs.length > 0) && (
-        <ul>
+        <List top={currentDir.id === 'root'}>
           {childDirs.map(child => (
             renderNode(child, dirs.filter(d => d.parent === child.id), dirs, onDirectoryClick)
           ))}
-        </ul>
+        </List>
       )}
-    </WrapperNode>
+    </ListElement>
   );
 }
 
 function DirectoryTree({ directories, onDirectoryClick } : DirectoryTreeProps) : JSX.Element {
   const rootDirs = directories.filter(directory => directory.parent === 'root');
-
   const rootDir: Directory = {
     id: 'root',
     name: '',
@@ -46,9 +54,9 @@ function DirectoryTree({ directories, onDirectoryClick } : DirectoryTreeProps) :
   };
 
   return (
-    <div>
+    <TreeWrapper>
       {renderNode(rootDir, rootDirs, directories, onDirectoryClick)}
-    </div>
+    </TreeWrapper>
   );
 }
 
