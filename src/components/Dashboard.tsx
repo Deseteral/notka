@@ -12,7 +12,8 @@ interface DashboardProps {
 const DashboardContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
 `;
 
 const Column = styled.div<{ width: number }>`
@@ -46,7 +47,7 @@ function Dashboard({ repoData } : DashboardProps) : JSX.Element {
           onNoteClick={id => setSelectedNote(id)}
         />
       </Column>
-      <Column width={3}>
+      <Column width={2}>
         <NoteEditor content={selectedNoteContent} />
       </Column>
     </DashboardContainer>
