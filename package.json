@@ -1,0 +1,19 @@
+{
+  "name": "notka",
+  "version": "1.0.0-prototype.1",
+  "description": "",
+  "main": "src/main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deseteral/notka.git"
+  },
+  "author": "Deseteral <deseteral@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Deseteral/notka/issues"
+  },
+  "homepage": "https://github.com/Deseteral/notka#readme"
+}
