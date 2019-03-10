@@ -5,7 +5,9 @@ interface NoteListProps {
   notes: Note[];
 }
 
-function NoteList({ notes }: NoteListProps) : JSX.Element {
+function NoteList({ notes }: NoteListProps) : (JSX.Element | null) {
+  if (notes.length === 0) return null;
+
   return (
     <ul>
       {notes.map(note => (

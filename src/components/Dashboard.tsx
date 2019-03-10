@@ -2,6 +2,7 @@ import * as React from 'react';
 import { RepositoryData, DirectoryID } from '../domain';
 import DirectoryTree from './DirectoryTree';
 import NoteList from './NoteList';
+import NoteEditor from './NoteEditor';
 
 interface DashboardProps {
   repoData: RepositoryData;
@@ -17,6 +18,7 @@ function Dashboard({ repoData } : DashboardProps) : JSX.Element {
         onDirectoryClick={(id: DirectoryID) => setSelectedDir(id)}
       />
       <NoteList notes={repoData.notes.filter(note => note.parent === selectedDir)} />
+      <NoteEditor content="test" />
     </div>
   );
 }
