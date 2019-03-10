@@ -26,12 +26,12 @@ function read() : RepositoryData {
         id: 'n0',
         name: '💥 My amazing note',
         parent: 'd1',
-        // content: '# this is test note\nIt\'s really great! 🙉',
+        content: '# this is test note\nIt\'s really great! 🙉',
       }, {
         id: 'n1',
         name: 'Second note',
         parent: 'd1',
-        // content: '# second\n>This is *second* great note!',
+        content: '# second\n>This is *second* great note!',
       },
     ],
   });

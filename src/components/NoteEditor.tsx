@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface NoteEditorProps {
-  content: string;
+  content: (string | null);
 }
 
 function NoteEditor({ content }: NoteEditorProps): JSX.Element {
@@ -9,9 +9,8 @@ function NoteEditor({ content }: NoteEditorProps): JSX.Element {
     <textarea
       rows={25}
       cols={80}
-    >
-      {content}
-    </textarea>
+      value={content || 'No note selected'}
+    />
   );
 }
 

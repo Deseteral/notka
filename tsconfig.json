@@ -10,7 +10,9 @@
     "declarationDir": "dist/types",
     "declaration": true,
     "strict": true,
-    "jsx": "react"
+    "jsx": "react",
+    "target": "es2018",
+    "moduleResolution": "node"
   },
   "include": [
     "src/**/*"

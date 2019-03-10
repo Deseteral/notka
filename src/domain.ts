@@ -1,15 +1,17 @@
 type DirectoryID = string;
+type NoteID = string;
+
 interface Directory {
   id: DirectoryID;
   name: string;
   parent: DirectoryID;
 }
 
-type NoteID = string;
 interface Note {
   id: NoteID;
   name: string;
   parent: DirectoryID;
+  content: string;
 }
 
 interface RepositoryData {
