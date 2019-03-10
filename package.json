@@ -45,8 +45,10 @@
     "webpack-dev-server": "3.2.1"
   },
   "dependencies": {
+    "@types/styled-components": "4.1.12",
     "react": "16.8.4",
     "react-dom": "16.8.4",
-    "shortid": "2.2.14"
+    "shortid": "2.2.14",
+    "styled-components": "4.1.3"
   }
 }
