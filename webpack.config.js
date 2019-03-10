@@ -6,7 +6,7 @@ const packageJson = require(path.resolve(__dirname, 'package.json')); // eslint-
 if (!process.env.NODE_ENV) process.env.NODE_ENV = 'production';
 const IS_DEV_MODE = process.env.NODE_ENV === 'development';
 
-const ENTRY_POINT_PATH = path.resolve(__dirname, 'src', 'main.ts');
+const ENTRY_POINT_PATH = path.resolve(__dirname, 'src', 'main.tsx');
 const BUILD_PATH = path.resolve(__dirname, 'dist');
 
 const APP_NAME = `${packageJson.name} v${packageJson.version}`;
