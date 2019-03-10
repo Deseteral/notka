@@ -38,13 +38,13 @@ function Dashboard({ repoData } : DashboardProps) : JSX.Element {
       <Column width={1}>
         <DirectoryTree
           directories={repoData.directories}
-          onDirectoryClick={id => setSelectedDir(id)}
+          onDirectoryClick={setSelectedDir}
         />
       </Column>
       <Column width={1}>
         <NoteList
           notes={repoData.notes.filter(note => note.parent === selectedDir)}
-          onNoteClick={id => setSelectedNote(id)}
+          onNoteClick={setSelectedNote}
         />
       </Column>
       <Column width={2}>
