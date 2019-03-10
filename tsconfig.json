@@ -12,7 +12,14 @@
     "strict": true,
     "jsx": "react",
     "target": "es2018",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "lib": [
+      "dom",
+      "es2018"
+    ],
+    "types": [
+      "react"
+    ]
   },
   "include": [
     "src/**/*"
