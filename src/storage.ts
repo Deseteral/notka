@@ -13,7 +13,7 @@ function read() : RepositoryData {
         parent: 'd0',
       }, {
         id: 'd2',
-        name: 'pod notka',
+        name: 'Below notka, and really really long. Not joking right here',
         parent: 'd0',
       }, {
         id: 'd3',
